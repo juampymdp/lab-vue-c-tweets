@@ -1,3 +1,41 @@
+<script setup>
+import { ref } from 'vue';
+import TweetList from './components/TweetList.vue';
+
+const tweets = ref([
+  {
+    id: 1,
+    user: {
+      name: 'Juan Pérez',
+      handle: 'juanperez',
+      image: 'https://i.pravatar.cc/48?img=1'
+    },
+    message: '¡Hola mundo! Este es mi primer tweet.',
+    timestamp: '2025-06-02 10:24:00'
+  },
+  {
+    id: 2,
+    user: {
+      name: 'María García',
+      handle: 'mariagarcia',
+      image: 'https://i.pravatar.cc/48?img=2'
+    },
+    message: 'Vue.js es increíble. ¡Me encanta!',
+    timestamp: '2025-06-02 10:30:00'
+  },
+  {
+    id: 3,
+    user: {
+      name: 'Carlos Rivera',
+      handle: 'carlosr',
+      image: 'https://i.pravatar.cc/48?img=3'
+    },
+    message: 'Estoy aprendiendo Vue con Ironhack 💪',
+    timestamp: '2025-06-02 11:00:00'
+  }
+]);
+</script>
+
 <template>
   <div id="app">
     <h1>Vue Tweets</h1>
@@ -5,49 +43,7 @@
   </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-import TweetList from './components/TweetList.vue';
-
-export default {
-  name: 'App',
-  components: {
-    TweetList
-  },
-  setup() {
-    const tweets = ref([
-      {
-        id: 1,
-        user: {
-          name: 'Juan Pérez',
-          handle: 'juanperez',
-          avatar: 'https://i.pravatar.cc/48?img=1'
-        },
-        content: '¡Hola mundo! Este es mi primer tweet.',
-        likes: 10,
-        retweets: 2
-      },
-      {
-        id: 2,
-        user: {
-          name: 'María García',
-          handle: 'mariagarcia',
-          avatar: 'https://i.pravatar.cc/48?img=2'
-        },
-        content: 'Vue.js es increíble. ¡Me encanta!',
-        likes: 25,
-        retweets: 5
-      }
-    ]);
-
-    return {
-      tweets
-    };
-  }
-};
-</script>
-
-<style>
+<style scoped>
 #app {
   max-width: 600px;
   margin: 2rem auto;
